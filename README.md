@@ -2,9 +2,39 @@
 
 Shader Studio is a Flutter learning lab for real-time GLSL fragment shaders. It is the demo project for the FlowForge video “GLSL Shaders: Create Effects Widgets Can't”.
 
-The gallery opens six live fragment shaders. The playground edits their uniforms, pauses the clock, and shows the `.frag` source that Flutter compiled.
+The gallery opens seven live fragment shaders. The playground edits their uniforms, pauses the clock, and shows the `.frag` source that Flutter compiled.
 
-Screenshots were not captured in this repository. Run the app to see the shaders. A still image would not show the animation.
+## Gallery
+
+These stills are the playground at its default uniforms. The effects keep moving while the app is running.
+
+### Living Liquid Aurora
+
+![Living Liquid Aurora](docs/screenshots/living-liquid-aurora.png)
+
+### Interactive Liquid Ripple
+
+![Interactive Liquid Ripple](docs/screenshots/interactive-liquid-ripple.png)
+
+### Procedural Energy Core
+
+![Procedural Energy Core](docs/screenshots/procedural-energy-core.png)
+
+### Plasma Field
+
+![Plasma Field](docs/screenshots/plasma-field.png)
+
+### Domain Warping
+
+![Domain Warping](docs/screenshots/domain-warping.png)
+
+### Radial Wave
+
+![Radial Wave](docs/screenshots/radial-wave.png)
+
+### Inside the Hive
+
+![Inside the Hive](docs/screenshots/inside-the-hive.png)
 
 ## Requirements
 
@@ -51,7 +81,7 @@ There is no code generator and no shader DSL.
 flutter test
 ```
 
-Unit tests cover clamping, pause, reset, ripple slots, and uniform names. A contract test compares each `.frag` file with the registry. The widget test opens the aurora playground and toggles pause. It does not prove the picture is correct. Golden images are not used; GPU output is not stable enough across backends to treat a screenshot as a unit test. Check the six playgrounds by eye.
+Unit tests cover clamping, pause, reset, ripple slots, and uniform names. A contract test compares each `.frag` file with the registry. The widget test opens the aurora playground and toggles pause. It does not prove the picture is correct. Golden images are not used; GPU output is not stable enough across backends to treat a screenshot as a unit test. Check the seven playgrounds by eye.
 
 ## Platform limits
 
