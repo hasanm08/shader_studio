@@ -8,15 +8,15 @@ The gallery opens seven live fragment shaders. The playground edits their unifor
 
 These stills are the playground at its default uniforms. The effects keep moving while the app is running.
 
-### Living Liquid Aurora
+### Inside the Hive
 
 ![Living Liquid Aurora](docs/screenshots/living-liquid-aurora.png)
 
-### Interactive Liquid Ripple
+### Radial Wave
 
 ![Interactive Liquid Ripple](docs/screenshots/interactive-liquid-ripple.png)
 
-### Procedural Energy Core
+### Domain Warping
 
 ![Procedural Energy Core](docs/screenshots/procedural-energy-core.png)
 
@@ -24,15 +24,15 @@ These stills are the playground at its default uniforms. The effects keep moving
 
 ![Plasma Field](docs/screenshots/plasma-field.png)
 
-### Domain Warping
+### Procedural Energy Core
 
 ![Domain Warping](docs/screenshots/domain-warping.png)
 
-### Radial Wave
+### Interactive Liquid Ripple
 
 ![Radial Wave](docs/screenshots/radial-wave.png)
 
-### Inside the Hive
+### Living Liquid Aurora
 
 ![Inside the Hive](docs/screenshots/inside-the-hive.png)
 
