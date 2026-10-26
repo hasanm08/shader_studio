@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shader_studio/app/routing/app_router.dart';
 import 'package:shader_studio/app/theme/app_theme.dart';
 import 'package:shader_studio/features/gallery/presentation/widgets/featured_shader_card.dart';
 import 'package:shader_studio/features/gallery/presentation/widgets/shader_sample_card.dart';
@@ -35,6 +36,12 @@ class ShaderGalleryScreen extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(padding, 12, padding, 8),
                   child: FeaturedShaderCard(sample: featured),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(padding, 20, padding, 8),
+                  child: const _ShapeMorphingCard(),
                 ),
               ),
               SliverToBoxAdapter(
@@ -115,6 +122,66 @@ class _BrandHeader extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _ShapeMorphingCard extends StatelessWidget {
+  const _ShapeMorphingCard();
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppColors.surface,
+      borderRadius: const BorderRadius.all(Radius.circular(16)),
+      child: InkWell(
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        onTap: () {
+          Navigator.of(context).pushNamed(AppRouter.shapeMorphing);
+        },
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 18, 20, 18),
+          child: Row(
+            children: [
+              Container(
+                width: 48,
+                height: 48,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color(0xFF2DD4BF),
+                      Color(0xFF14B8A6),
+                      Color(0xFF0F766E),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Shape Morphing',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Contour interpolation between geometric shapes. '
+                      'Circle → star and beyond — no shaders required.',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: AppColors.textMuted),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

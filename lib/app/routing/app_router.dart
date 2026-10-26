@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shader_studio/features/gallery/presentation/shader_gallery_screen.dart';
 import 'package:shader_studio/features/playground/data/shader_sample_registry.dart';
 import 'package:shader_studio/features/samples/presentation/shader_sample_screen.dart';
+import 'package:shader_studio/features/shape_morphing/presentation/pages/shape_morphing_demo_page.dart';
 
 /// Named routes for the gallery and one playground per sample id.
 abstract final class AppRouter {
@@ -11,6 +12,9 @@ abstract final class AppRouter {
   /// Prefix for `/playground/<sample id>`.
   static const String playground = '/playground';
 
+  /// Contour morphing demo (non-shader feature).
+  static const String shapeMorphing = '/shape-morphing';
+
   /// Builds the page for [settings].
   static Route<void> onGenerate(RouteSettings settings) {
     final name = settings.name ?? gallery;
@@ -18,6 +22,12 @@ abstract final class AppRouter {
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const ShaderGalleryScreen(),
+      );
+    }
+    if (name == shapeMorphing) {
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const ShapeMorphingDemoPage(),
       );
     }
     const prefix = '$playground/';
