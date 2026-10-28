@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shader_studio/features/card_flip/presentation/pages/card_flip_demo_page.dart';
 import 'package:shader_studio/features/gallery/presentation/shader_gallery_screen.dart';
 import 'package:shader_studio/features/playground/data/shader_sample_registry.dart';
 import 'package:shader_studio/features/samples/presentation/shader_sample_screen.dart';
@@ -15,6 +16,9 @@ abstract final class AppRouter {
   /// Contour morphing demo (non-shader feature).
   static const String shapeMorphing = '/shape-morphing';
 
+  /// 3D card flip demo (non-shader feature).
+  static const String cardFlip = '/card-flip';
+
   /// Builds the page for [settings].
   static Route<void> onGenerate(RouteSettings settings) {
     final name = settings.name ?? gallery;
@@ -28,6 +32,12 @@ abstract final class AppRouter {
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const ShapeMorphingDemoPage(),
+      );
+    }
+    if (name == cardFlip) {
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const CardFlipDemoPage(),
       );
     }
     const prefix = '$playground/';
