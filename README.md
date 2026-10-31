@@ -62,6 +62,14 @@ flutter run
 | Radial Wave | `shaders/radial_wave.frag` | Radial sine used as UV displacement |
 | Inside the Hive | `shaders/beehive_interior.frag` | Hex tube ray march, far comb, ellipsoid bees |
 
+### Feature demos
+
+| Demo | Entry | What it shows |
+|---|---|---|
+| Shape Morphing | `/shape-morphing` | Contour interpolation without shaders |
+| 3D Card Flip | `/card-flip` | Perspective flip, cube, basket drop |
+| Glass Refraction | `/glass-refraction` | Captured background + lens GLSL (`lib/features/glass_refraction/`) |
+
 ## Add a shader
 
 1. Add `shaders/your_effect.frag` with the header comment used by the other files: name, purpose, uniform index table, coordinates, and limits.

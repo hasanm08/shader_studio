@@ -52,6 +52,12 @@ class ShaderGalleryScreen extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
+                  padding: EdgeInsets.fromLTRB(padding, 12, padding, 8),
+                  child: const _GlassRefractionCard(),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
                   padding: EdgeInsets.fromLTRB(padding, 28, padding, 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,6 +246,73 @@ class _CardFlipCard extends StatelessWidget {
                     Text(
                       'Chamfered card, quarter-turn cube, and an add-to-basket '
                       'drop that shuts the lid.',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: AppColors.textMuted),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _GlassRefractionCard extends StatelessWidget {
+  const _GlassRefractionCard();
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: AppColors.surface,
+      borderRadius: const BorderRadius.all(Radius.circular(16)),
+      child: InkWell(
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        onTap: () {
+          Navigator.of(context).pushNamed(AppRouter.glassRefraction);
+        },
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 18, 20, 18),
+          child: Row(
+            children: [
+              Container(
+                width: 48,
+                height: 48,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(14)),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color(0xAAE8FBFF),
+                      Color(0x6614E6CF),
+                      Color(0x334DBBFF),
+                    ],
+                  ),
+                  border: Border.all(color: const Color(0x88E8FBFF)),
+                ),
+                child: const Icon(
+                  Icons.blur_on,
+                  color: Color(0xFFE8FBFF),
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Glass Refraction',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Captured background, GLSL lens bend, Fresnel rims — '
+                      'a reusable GlassRefraction component.',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shader_studio/features/card_flip/presentation/pages/card_flip_demo_page.dart';
 import 'package:shader_studio/features/gallery/presentation/shader_gallery_screen.dart';
+import 'package:shader_studio/features/glass_refraction/presentation/pages/glass_demo_page.dart';
 import 'package:shader_studio/features/playground/data/shader_sample_registry.dart';
 import 'package:shader_studio/features/samples/presentation/shader_sample_screen.dart';
 import 'package:shader_studio/features/shape_morphing/presentation/pages/shape_morphing_demo_page.dart';
@@ -18,6 +19,9 @@ abstract final class AppRouter {
 
   /// 3D card flip demo (non-shader feature).
   static const String cardFlip = '/card-flip';
+
+  /// Glass refraction demo (captured background + fragment shader).
+  static const String glassRefraction = '/glass-refraction';
 
   /// Builds the page for [settings].
   static Route<void> onGenerate(RouteSettings settings) {
@@ -38,6 +42,12 @@ abstract final class AppRouter {
       return MaterialPageRoute<void>(
         settings: settings,
         builder: (context) => const CardFlipDemoPage(),
+      );
+    }
+    if (name == glassRefraction) {
+      return MaterialPageRoute<void>(
+        settings: settings,
+        builder: (context) => const GlassDemoPage(),
       );
     }
     const prefix = '$playground/';

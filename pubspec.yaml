@@ -61,6 +61,7 @@ flutter:
     - shaders/domain_warp.frag
     - shaders/radial_wave.frag
     - shaders/beehive_interior.frag
+    - shaders/glass_refraction.frag
 
   assets:
     - lib/features/samples/application/shader_uniform_writers.dart
@@ -81,6 +82,7 @@ flutter:
     - docs/samples/DOMAIN_WARP.md
     - docs/samples/RADIAL_WAVE.md
     - docs/samples/BEEHIVE_INTERIOR.md
+    - docs/samples/GLASS_REFRACTION.md
 
   # To add assets to your application, add an assets section, like this:
   # assets:
